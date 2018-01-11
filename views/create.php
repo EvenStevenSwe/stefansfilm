@@ -7,7 +7,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<link rel="icon" href="../../favicon.ico">
-    <title>Stefan's Filmsamling</title>
+    <title>Filmer att se</title>
 
 	<!-- Länk till CSS -->
 	<link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -25,8 +25,7 @@
                 <span class="icon-bar"></span>
             </button>
 
-            <a class="navbar-brand" href="/add-movie" role="button">Lägg till film</a>
-        </div>
+          </div>
     </div>
 </nav>
 
@@ -35,13 +34,33 @@
         <h2>Lägg till film</h2>
         <form method="post" action="/create-movie">
             <div class="form-group">
+
                 <input type="text" class="form-control" name="movie_title" placeholder="Titel">
-                <input type="text" class="form-control" name="movie_genre" placeholder="Genre">
+
+                <input type="text" class="form-control" name="movie_genre" list="genre" placeholder="Genre">
+                <datalist id="genre">
+                    <option label="Action" value="Action">
+                    <option label="Action/Komedi" value="Action/Komedi">
+                    <option label="Action/Thriller" value="Action/Thriller">
+                    <option label="Action/Äventyr" value="Action/Äventyr">
+                    <option label="Animerat" value="Animerat">
+                    <option label="Drama" value="Drama">
+                    <option label="Komedi" value="Komedi">
+                    <option label="Sci-Fi" value="Sci-Fi">
+                    <option label="Thriller" value="Thriller">
+                </datalist>
+
                 <input type="text" class="form-control" name="movie_year" placeholder="År">
-                <input type="text" class="form-control" name="movie_media" placeholder="Mediatyp">
+
+                <input type="text" class="form-control" name="movie_media" list="typeorplace" placeholder="Mediatyp el. Plats">
+                <datalist id="typeorplace">
+                    <option label="Bluray" value="Bluray">
+                    <option label="Extern-HD" value="Extern-HD">
+                </datalist>
+
                 <input type="text" class="form-control" name="movie_url" placeholder="Info">
             </div>
-            <button type="submit" class="btn btn-default">Ok</button>
+            <button type="submit" class="btn btn-default">Go!</button>
         </form>
     </div>
 </div>
@@ -49,7 +68,7 @@
     <hr>
 
 <footer>
-    <p>&copy; 2017 Stefan's Filmsamling.</p>
+    <p>&copy; 2017</p>
 </footer>
 </div>
 

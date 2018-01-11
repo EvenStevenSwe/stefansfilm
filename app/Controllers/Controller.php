@@ -33,4 +33,12 @@ class Controller {
 	public function createMovie($movieModel, $data) {
 		return $movieModel->create($data);
 	}
+
+    /**
+     * @param $select
+     * @return mixed
+     */
+    public function getInfo($select) {
+        return $select->getInfo($select);
+    }
 }

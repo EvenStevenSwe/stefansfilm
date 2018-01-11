@@ -37,9 +37,7 @@ class Database {
 		$columns = array_keys($data);
 
 		$columnSql = implode(',', $columns);
-		//'name, birthyear, city';
 		$bindingSql = ':'.implode(',:', $columns);
-		//':Anna, :1989, :Trollhättan';
 
 		$sql = "INSERT INTO $table ($columnSql) VALUES ($bindingSql)";
 		$stm = $this->pdo->prepare($sql);
@@ -92,6 +90,13 @@ class Database {
         }else{
             return $this->create($table, $data);
         }
+    }
+
+    public function getInfo($table, $select){
+        $stm = $this->pdo->prepare("SELECT $select FROM $table");
+        $success = $stm->execute();
+        $rows = $stm->fetchAll(PDO::FETCH_ASSOC);
+        return ($success) ? $rows: [];
     }
 
 }

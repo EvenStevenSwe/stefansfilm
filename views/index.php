@@ -7,7 +7,7 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 	<link rel="icon" href="../../favicon.ico">
-    <title>Stefan's Filmsamling</title>
+    <title>Filmer att se</title>
 
 	<!-- Länk till CSS -->
 	<link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -31,7 +31,7 @@
 
 <div class="jumbotron">
     <div class="container">
-        <h2>Stefan's Filmsamling</h2>
+        <h2>Filmer att se</h2>
 
         <table class="table table-striped">
             <thead>
@@ -39,7 +39,7 @@
                 <th>Titel</th>
                 <th>Genre</th>
                 <th>År</th>
-                <th>Mediatyp</th>
+                <th>Mediatyp el. Plats</th>
                 <th>Info</th>
             </tr>
             </thead>
@@ -47,9 +47,9 @@
                 <?php foreach ($movie as $movies):  ?>
                     <tr>
                         <td><?= $movies['movie_title'] ?></td>
-                        <td><a href="/genre?genre=<?= $movies['movie_genre'] ?>"><?= $movies['movie_genre'] ?></td>
-                        <td><a href="/year?year=<?= $movies['movie_year'] ?>"><?= $movies['movie_year'] ?></a></td>
-                        <td><a href="/medie?medie=<?= $movies['movie_media'] ?>"><?= $movies['movie_media'] ?></td>
+                        <td><a href="/info?genre=<?= $movies['movie_genre'] ?>"><?= $movies['movie_genre'] ?></td>
+                        <td><a href="/info?year=<?= $movies['movie_year'] ?>"><?= $movies['movie_year'] ?></a></td>
+                        <td><a href="/info?medie=<?= $movies['movie_media'] ?>"><?= $movies['movie_media'] ?></td>
                         <td><a href="<?= $movies['movie_url'] ?>" target="_blank">IMDb</a></td>
                         <td><a href="/update?id=<?= $movies['id'] ?>">Uppdatera</a> <a href="/delete?id=<?= $movies['id'] ?>">Ta bort</a></td>
                     </tr>
@@ -62,7 +62,7 @@
 	<hr>
 
 <footer>
-    <p>&copy; 2017 Stefan's Filmsamling.</p>
+    <p>&copy; 2017 </p>
 </footer>
 </div>
 

@@ -2,7 +2,7 @@
 
 return [
     "host" => "localhost",
-    "db" => "mvc",
+    "db" => "moviecollection",
     "charset" => "utf8",
     "user" => "root",
     "password" => "root",

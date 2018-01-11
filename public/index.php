@@ -26,7 +26,6 @@ $dsn = "mysql:host=".$config['host'].";dbname=".$config['db'].";charset=".$confi
 $pdo = new PDO($dsn, $config['user'], $config['password'], $config['options']);
 $db = new Database($pdo);
 
-
 //$controller = new Controller($baseDir);
 $url = $path($_SERVER['REQUEST_URI']);
 $movieModel = new MovieModel($db);
@@ -56,21 +55,10 @@ switch ($url) {
 		header('Location: /');
 	break;
 
-	    //Lista filmer via genre
-    case '/genre':
-        $movie = $movieModel->getGenre();
-        require $baseDir.'/views/index.php';
-        break;
-
-        //Lista filmer via år
-    case '/year':
-        $movie = $movieModel->getYear();
-        require $baseDir.'/views/index.php';
-        break;
-
-        //Lista filmer via medietyp
-    case '/medie':
-        $movie = $movieModel->getMedie();
+	    //Lista filmer via genre, år eller media
+    case '/info':
+        $movie = $movieModel->getInfo('table_name', 'movie_genre, movie_year, movie_media');
+        //$controller->index();
         require $baseDir.'/views/index.php';
         break;
 

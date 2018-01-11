@@ -43,6 +43,14 @@ abstract class Model {
 		return $this->db->getAll($this->table);
 	}
 
+    /**
+     * @param $select
+     * @return array
+     */
+    public function getInfo($select) {
+        return $this->db->getInfo($select, $this->table);
+    }
+
 	public function create($data) {
 		return $this->db->create($this->table, $data);
 	}

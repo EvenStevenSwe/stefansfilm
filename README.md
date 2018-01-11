@@ -1,2 +1,3 @@
-# wieg16-mvc-starter-kit
-MVC Starter Kit
+# MVC Starter Kit 
+
+Skolprojekt, WIEG16
